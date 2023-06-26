@@ -1,12 +1,12 @@
-const express = require('express')
-const {PORT} = require('./config')
+const express = require('express');
+const {serverConfig, Logger} = require('./config');
+const apiRoutes = require('./routes');
 
-const app = express()
+const app = express();
 
-app.get('/', (req, res) =>{
-    res.send("Hello World");
-} )
+app.use('/api', apiRoutes);
 
-app.listen(PORT, ()=>{
-    console.log(`Example app listening to port ${PORT}`)
+app.listen(serverConfig.PORT, ()=>{
+    console.log(`Example app listening to port ${serverConfig.PORT}`);
+    Logger.info("Succesfully started the server", {msg: "Something"});
 })

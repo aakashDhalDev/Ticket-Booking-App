@@ -1,5 +1,5 @@
-const express = require('./express');
-const { AirplaneController } = require('../../controllers');
+const express = require('express');
+const { AirplaneController } = require('../../controller');
 
 const router = express.Router();
 

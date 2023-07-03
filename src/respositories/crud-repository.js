@@ -5,14 +5,9 @@ class CrudRepository{
         this.model = model;
     }
 
-    async create(data){
-        try {
-            const response = await this.model.create(data);
-            return response;
-        } catch (error) {
-            Logger.error("Something went wrong insid ethe CRUD repo: CREATE");
-            throw error;
-        }
+    async create(data){    
+        const response = await this.model.create(data);
+        return response;
     }
 
     async destroy(data){

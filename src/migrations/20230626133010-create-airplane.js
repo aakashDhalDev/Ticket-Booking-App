@@ -15,7 +15,8 @@ module.exports = {
       },
       capacity: {
         type: Sequelize.INTEGER,
-        defaultValue:0
+        min:50,
+        max:1500
       },
       createdAt: {
         allowNull: false,

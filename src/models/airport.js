@@ -17,13 +17,13 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'CASCADE'
       });
 
-      this.hasMany(models.flight,{
-        foreignKey: 'departureAirportId',
+      this.hasMany(models.Flight,{
+        foreignKey: 'code',
         onDelete: 'CASCADE'
       });
 
       this.hasMany(models.Airport,{
-        foreignKey: 'arrivalAirportId',
+        foreignKey: 'code',
         onDelete: 'CASCADE'
       })
     }
@@ -41,7 +41,8 @@ module.exports = (sequelize, DataTypes) => {
     }, 
     address:{
       type: DataTypes.STRING,
-      unique: true
+      unique: true,
+      allowNull: true
     }, 
     cityId:{
       type: DataTypes.INTEGER,
